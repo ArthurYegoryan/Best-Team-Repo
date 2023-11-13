@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**************/
+/*** Header ***/
+
+header {
+    display: flex;
+}
+
+header > .logo {
+    width: 20%;
+    height: 200px;
+    background-color: black;
+    color: white;
+}
+
+header > .group-name {
+    width: 80%;
+    height: 200px;
+    background-color: yellow;
+}
+
+/**************/
+
+
+/**************/
+/*** Main ***/
+
+main > #searching-interface {
+    margin-top: 100px;
+    text-align: center;
+}
+
+main > #searching-interface > .search-question-text {
+    font-size: 40px;
+}
+
+main > #searching-interface > .search-input > form {
+    margin-top: 30px;
+}
+
+main > #searching-interface > .search-input > form > input[type="text"] {
+    height: 40px;
+    width: 400px;
+    font-size: 25px;
+}
+main > #searching-interface > .search-input > form > input[type="submit"] {
+    height: 40px;
+    width: 150px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/**************/
+
+
+/**************/
+/*** Footer ***/
+
+footer > .footer-interface {
+    display: flex;
+}
+
+footer > .footer-interface > .logo-name {
+    position: fixed;
+    bottom: 0;
+    width: 20%;
+    height: 200px;
+    background-color: black;
+}
+
+footer > .footer-interface > .logo-name > .logo {
+    position: absolute;
+    width: 10%;
+    color: white;
+}
+
+footer > .footer-interface > .logo-name > .name {
+    position: absolute;
+    width: 10%;
+    bottom: 0;
+    color: white;
+}
+
+footer > .footer-interface > .footer-content {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 200px;
+    background-color: yellow;
+}
