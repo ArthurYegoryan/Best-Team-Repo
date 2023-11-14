@@ -43,12 +43,12 @@ main > #searching-interface > .search-input > form {
     margin-top: 30px;
 }
 
-main > #searching-interface > .search-input > form > input[type="text"] {
+main > #searching-interface > .search-input > form > #title-place {
     height: 40px;
     width: 400px;
     font-size: 25px;
 }
-main > #searching-interface > .search-input > form > input[type="submit"] {
+main > #searching-interface > .search-input > form > #search-button {
     height: 40px;
     width: 150px;
     font-size: 25px;
