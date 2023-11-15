@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея с фотографиями собак</title>
+    <link rel="stylesheet"  type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Галерея  собак </h1>
+        <img src="https://clipart-library.com/2023/1332316-middle.png" alt="Логотип" >
+    </header>
+
+    <form id="myForm">
+        <label for="breeds">Породы собак:</label>
+        <select id="breeds" name="breeds" onchange="loadDogImages()">
+            <option value="akita">Akita</option>
+            <option value="beagle">Beagle</option>
+            <option value="dalmatian">Dalmatian</option>
+            <option value="germanshepherd">German Shepherd</option>
+            <option value="husky">Husky</option>
+            <option value="labrador">Labrador</option>
+            <option value="pug">Pug</option>
+            <option value="spaniel">Spaniel</option>
+            <option value="scottishdeerhound">Scottish Deerhound</option>
+
+        </select>
+    </form>
+
+    <div id="image-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
