@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/**************/
+/*** Header ***/
+
+header {
+    display: flex;
+    height: 150px;
+}
+
+header > .logo {
+    width: 20%;
+    background-color: black;
+    color: white;
+}
+
+header > .group-name {
+    width: 80%;
+    background-color: yellow;
+}
+
+/**************/
+
+
+/**************/
+/*** Main ***/
+
+main > #searching-interface {
+    margin-top: 100px;
+    text-align: center;
+}
+
+main > #searching-interface > .search-question-text {
+    font-size: 40px;
+}
+
+main > #searching-interface > .search-input > form {
+    margin-top: 30px;
+}
+
+main > #searching-interface > .search-input > form > #title-place {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 23px;
+    color: #333;
+}
+main > #searching-interface > .search-input > form > #search-button {
+    padding: 10px 20px;
+    background-color: #138065;
+    color: white;
+    border: none;
+    font-size: 23px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/**************/
+
+
+/**************/
+/*** Footer ***/
+
+footer > .footer-interface {
+    display: flex;
+}
+
+footer > .footer-interface > .logo-name {
+    position: fixed;
+    bottom: 0;
+    width: 20%;
+    height: 20%;
+    background-color: black;
+}
+
+footer > .footer-interface > .logo-name > .logo {
+    position: absolute;
+    width: 10%;
+    color: white;
+}
+
+footer > .footer-interface > .logo-name > .name {
+    position: absolute;
+    width: 10%;
+    bottom: 0;
+    color: white;
+}
+
+footer > .footer-interface > .footer-content {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 80%;
+    height: 20%;
+    background-color: yellow;
+}
+
+/**************/
+
+
+/*** Test ***/
+.test-print-result-section {
+    height: 300px;
+    width: 40%;
+    overflow-y: scroll;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10px;
+    border: 2px solid black;
+}
