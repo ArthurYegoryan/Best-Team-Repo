@@ -9,18 +9,17 @@
 
 header {
     display: flex;
+    height: 150px;
 }
 
 header > .logo {
     width: 20%;
-    height: 200px;
     background-color: black;
     color: white;
 }
 
 header > .group-name {
     width: 80%;
-    height: 200px;
     background-color: yellow;
 }
 
@@ -44,15 +43,25 @@ main > #searching-interface > .search-input > form {
 }
 
 main > #searching-interface > .search-input > form > #title-place {
-    height: 40px;
-    width: 400px;
-    font-size: 25px;
+    width: 60%;
+    max-width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 23px;
+    color: #333;
 }
 main > #searching-interface > .search-input > form > #search-button {
-    height: 40px;
-    width: 150px;
-    font-size: 25px;
+    padding: 10px 20px;
+    background-color: #138065;
+    color: white;
+    border: none;
+    font-size: 23px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 /**************/
@@ -69,7 +78,7 @@ footer > .footer-interface > .logo-name {
     position: fixed;
     bottom: 0;
     width: 20%;
-    height: 200px;
+    height: 20%;
     background-color: black;
 }
 
@@ -91,6 +100,20 @@ footer > .footer-interface > .footer-content {
     bottom: 0;
     right: 0;
     width: 80%;
-    height: 200px;
+    height: 20%;
     background-color: yellow;
+}
+
+/**************/
+
+
+/*** Test ***/
+.test-print-result-section {
+    height: 300px;
+    width: 40%;
+    overflow-y: scroll;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 10px;
+    border: 2px solid black;
 }
