@@ -65,4 +65,14 @@ body {
 }
 
 
+#countriesList{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 35px;
+  font-size: 35px;
+  cursor: pointer;
+  color: white;
+}
+
 
