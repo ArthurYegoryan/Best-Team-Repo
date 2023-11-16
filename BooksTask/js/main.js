@@ -21,15 +21,49 @@ async function makeRequest() {
     try {
         const response = await fetch(generalURL + makeTitleForRequest(inputTitle));
         const data = await response.json();
-        const result = await data.docs[0].seed.filter(seed => seed.startsWith("/subjects"));
-        
-        result.map((subject => {
-            const subjectShower = document.createElement('p');
-            subjectShower.classList.add("subject");
-            subjectShower.textContent = subject;
 
-            printResultSection.appendChild(subjectShower);
-        }));
+        const numFoundElement = document.createElement('h3');
+        numFoundElement.classList.add("num-found");
+        numFoundElement.textContent = `Search results number: ${data.numFound}`;
+
+        /*** Response info list ***/
+        const resultElement = document.createElement('div');
+        resultElement.classList.add("result");
+
+        const titleElement = document.createElement('p');
+        titleElement.classList.add("result-title-info");
+        titleElement.textContent = `Title: ${data.docs[0].title}`;
+
+        const authorNameElement = document.createElement('p');
+        authorNameElement.classList.add("result-author-name-info");
+        authorNameElement.textContent = `Author name: ${data.docs[0].author_name}`;
+
+        const firstPublishYearElement = document.createElement('p');
+        firstPublishYearElement.classList.add("result-first-publish-year-info");
+        firstPublishYearElement.textContent = `First publish year: ${data.docs[0].first_publish_year}`;
+
+        const subjectsTitleElement = document.createElement('p');
+        subjectsTitleElement.classList.add("result-subjects-title-info");
+        subjectsTitleElement.textContent = "Subjects (first 5):";
+
+        printResultSection.appendChild(numFoundElement);
+        resultElement.appendChild(titleElement);
+        resultElement.appendChild(authorNameElement);
+        resultElement.appendChild(firstPublishYearElement);
+        resultElement.appendChild(subjectsTitleElement);
+
+        const subjectsElement = document.createElement('div');
+        subjectsElement.classList.add("result-subjects-info");
+        subjectsElement.style.marginLeft = "20px"
+        for (let i = 0; i < 5; i++) {
+            const subjectElement = document.createElement('p');
+            subjectElement.classList.add("result-subject-info");
+            subjectElement.textContent = data.docs[0].subject[i];
+            subjectsElement.appendChild(subjectElement);
+        }
+
+        resultElement.appendChild(subjectsElement);
+        printResultSection.appendChild(resultElement);
     } catch (err) {
         console.error(err.message);
     }    
