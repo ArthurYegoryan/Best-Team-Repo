@@ -87,4 +87,28 @@ body {
   background-color:#F7E2C4;
 }
 
-
+#title{
+  margin-left: 160px;
+}
+#img1{
+  margin-left: 180px;
+  display: table-cell;
+  width: 200px;
+  height: 100px;
+}
+#img2{
+  margin-left: 180px;
+  width: 200px;
+  height: 130px;
+}
+#capital{
+  margin-left: 190px;
+}
+#pop{
+  margin-left: 190px;
+}
+#img::after{
+  content: "";
+  display: table;
+  clear: both;
+}
