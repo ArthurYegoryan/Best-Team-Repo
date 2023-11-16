@@ -1,29 +1,38 @@
 const generalURL = "http://openlibrary.org/search.json?q=";
 const paginationURLPeace = "&page=";
 
-const searchButton = document.querySelector("#search-button");
+const formElement = document.querySelector("form");
 const titlePlace = document.querySelector("#title-place");
+const printResultSection = document.querySelector(".test-print-result-section");
 
 let inputTitle = "";
 titlePlace.addEventListener("keyup", function() {
     inputTitle = titlePlace.value;
 });
 
-searchButton.addEventListener("click", function() {
-    const seeds = makeRequest(generalURL + makeTitleForRequest(inputTitle));
-    console.log(seeds);
-});
+formElement.addEventListener("submit", (event) => {
+    event.preventDefault();
+    makeRequest();
+})
 
-async function makeRequest(url) {
-    const seeds = [];
-    
-    await fetch(url)
-        .then(response => response.json())
-        .then(result => result.docs[0].seed.filter(seed => seed.startsWith("/subjects")))
-        .then(result => result.map(subject => seeds.push(subject)))
-        .catch(error => console.log(error.message));
+async function makeRequest() {
+    printResultSection.innerHTML = "";
 
-    return seeds;
+    try {
+        const response = await fetch(generalURL + makeTitleForRequest(inputTitle));
+        const data = await response.json();
+        const result = await data.docs[0].seed.filter(seed => seed.startsWith("/subjects"));
+        
+        result.map((subject => {
+            const subjectShower = document.createElement('p');
+            subjectShower.classList.add("subject");
+            subjectShower.textContent = subject;
+
+            printResultSection.appendChild(subjectShower);
+        }));
+    } catch (err) {
+        console.error(err.message);
+    }    
 }
 
 function makeTitleForRequest(title) {
