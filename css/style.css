@@ -76,3 +76,15 @@ body {
 }
 
 
+#countryDetails{
+  backdrop-filter: blur(4px) saturate(180%);
+  position: absolute;
+  width: 600px;
+  height: 700px;
+  display: block;
+  margin-left: 400px;
+  top: 60px;
+  background-color:#F7E2C4;
+}
+
+
