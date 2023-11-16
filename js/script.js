@@ -23,11 +23,13 @@ selectElement.addEventListener("change",()=>{
         fetch(`https://restcountries.com/v3.1/name/${selectElement.value}`).
         then(res => res.json()).
         then(data =>{
-            myFetch(data)
+            console.log(data)
+            let imgData = data[0].flags.svg
+            let div = '';
+            div += `<img src="${imgData}" alt="">`
+            countryDet.innerHTML = div
         })
 })
-
-
 
 const myFetch = function(data){
     let imgData = data[0].flags.svg
@@ -52,3 +54,34 @@ const myFetch = function(data){
     countryDet.innerHTML = div
     document.body.appendChild(countryDet)
   }
+
+  
+searchInput.addEventListener("input",()=>{
+    let searchRes = searchInput.value
+    if(searchRes.length >= 3){
+
+    
+    fetch(`https://restcountries.com/v3.1/name/${searchRes}`)
+    .then(res => res.json())
+    .then(data =>{
+        let ul = data[0].name.common
+        let div = '';
+        div += `<ul>${ul} </ul>`
+        countryUl.innerHTML = div
+
+        countryUl.addEventListener("click",()=>{
+            fetch(`https://restcountries.com/v3.1/name/${searchRes}`).
+            then(res => res.json()).
+            then(data =>{
+                myFetch(data)
+        
+        })
+        })
+    })
+}else{
+    let div = ''
+    countryUl.innerHTML = div
+}
+    
+  
+})
