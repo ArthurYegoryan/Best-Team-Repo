@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <div>
-        <h1>Countries Website</h1>
-        <input type="text" id="searchInput" placeholder="Search for a country">
-        <ul id="countriesList"></ul>
-        <div id="countryDetails"></div>
-      </div>
+<body style="background-image: url(image0_0.jpg) ;">
+    <div id="body">
+      <h1 id="head">Countries Website</h1>
+      <!-- <img src="image0_0.jpg" alt=""> -->
       <div>
         <select name="countries" id="country">
-          <option value="opt1">Select the Country</option>
-            
+          <option value="opt1" >All</option>
         </select>
+        </div>
+      <div class="container">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search for a country">
+
+        </div>
+        
+    </div>
+        <div class="details">
+          <div id="countriesList"></div>
+        </div>
+      
       </div>
-      <div id="image"></div>
+      
     <script src="./js/script.js"></script>
 </body>
 </html>
