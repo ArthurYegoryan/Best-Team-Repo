@@ -23,12 +23,32 @@ selectElement.addEventListener("change",()=>{
         fetch(`https://restcountries.com/v3.1/name/${selectElement.value}`).
         then(res => res.json()).
         then(data =>{
-            console.log(data)
-            let imgData = data[0].flags.svg
-            let div = '';
-            div += `<img src="${imgData}" alt="">`
-            countryDet.innerHTML = div
+            myFetch(data)
         })
 })
 
 
+
+const myFetch = function(data){
+    let imgData = data[0].flags.svg
+    let imgData1 = data[0].capital.toString()
+    let imgData2 = data[0].coatOfArms.svg
+    let imgData3 = data[0].name.official
+    let imgData4 = data[0].population
+    let div = '';
+    div += `
+    <div id="const">
+    <h2 id="title">${imgData3}</h2><br>
+    <div id="img">
+    <div><img src="${imgData}"id = "img1"></div><br>
+    <div><img src="${imgData2}"id = "img2"></div><br>
+    </div>
+    <div id="capital">Capital:${imgData1}</div><br>
+    
+    <div id="pop">Population${imgData4}</div>
+    </div>
+    `
+    countryDet.id = "countryDetails"
+    countryDet.innerHTML = div
+    document.body.appendChild(countryDet)
+  }
