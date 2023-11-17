@@ -17,14 +17,23 @@
                 What kind of book do you want to search?
             </div>
             <div class="search-input">
-                <form action="" name="">
+                <form action="" name="" id="book-search-form">
                     <input type="text" placeholder="Please enter book title" name="title" id="title-place" required>
-
                     <button id="search-button">Search</button>
                 </form>
             </div>
         </section>
-        <div class="test-print-result-section"></div>
+        <section id="response-show">
+            <div id="print-result-section"></div>
+            <div id="page-management-section">
+                <form action="" name="" id="go-page-form">
+                    <input type="number" placeholder="1" id="page-number">
+                    <button id="go-page-button">GO!</button>
+                </form>
+                <button id="prev-page-button">Previous page</button>
+                <button id="next-page-button">Next page</button>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-interface">

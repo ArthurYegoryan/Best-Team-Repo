@@ -27,10 +27,12 @@ header > .group-name {
 
 
 /**************/
-/*** Main ***/
+/***** Main *****/
+
+/*** Searching interface ***/
 
 main > #searching-interface {
-    margin-top: 100px;
+    margin-top: 60px;
     text-align: center;
 }
 
@@ -38,11 +40,11 @@ main > #searching-interface > .search-question-text {
     font-size: 40px;
 }
 
-main > #searching-interface > .search-input > form {
+main > #searching-interface > .search-input > #book-search-form {
     margin-top: 30px;
 }
 
-main > #searching-interface > .search-input > form > #title-place {
+main > #searching-interface > .search-input > #book-search-form > #title-place {
     width: 60%;
     max-width: 400px;
     padding: 10px 20px;
@@ -52,16 +54,98 @@ main > #searching-interface > .search-input > form > #title-place {
     font-size: 23px;
     color: #333;
 }
-main > #searching-interface > .search-input > form > #search-button {
+
+main > #searching-interface > .search-input > #book-search-form > #search-button {
     padding: 10px 20px;
     background-color: #138065;
     color: white;
     border: none;
     font-size: 23px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5px;    
     margin-left: 10px;
+    transition: 0.5s;
+}
+main > #searching-interface > .search-input > #book-search-form > #search-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+main > #searching-interface > .search-input > #book-search-form > #search-button:active {
+    opacity: 1;
+}
+
+
+/*** Result section ***/
+
+#response-show {
+    display: flex;
+    justify-content: center;
+}
+
+#print-result-section {
+    height: 200px;
+    width: 250px;
+    margin-top: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/*** Page management ***/
+
+#page-management-section {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+#go-page-form {
+    margin-bottom: 10px;
+}
+
+#page-number {
+    width: 10%;
+    max-width: 60px;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+#go-page-button, #prev-page-button, #next-page-button {
+    padding: 5px 10px;
+    background-color: #4f4dbe;
+    color: white;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: 0.5s;
+}
+
+#go-page-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+#prev-page-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+#next-page-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#go-page-button:active {
+    opacity: 1;
+}
+#prev-page-button:active {
+    opacity: 1;
+}
+#next-page-button:active {
+    opacity: 1;
 }
 
 /**************/
@@ -105,15 +189,3 @@ footer > .footer-interface > .footer-content {
 }
 
 /**************/
-
-
-/*** Test ***/
-.test-print-result-section {
-    height: 300px;
-    width: 40%;
-    overflow-y: scroll;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 10px;
-    border: 2px solid black;
-}
