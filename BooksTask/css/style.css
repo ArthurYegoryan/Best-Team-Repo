@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url('../img/backgroundImage.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 /**************/
 /*** Header ***/
 
@@ -14,13 +20,13 @@ header {
 
 header > .logo {
     width: 20%;
-    background-color: black;
+    /* background-color: black; */
     color: white;
 }
 
 header > .group-name {
     width: 80%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 /**************/
@@ -38,6 +44,7 @@ main > #searching-interface {
 
 main > #searching-interface > .search-question-text {
     font-size: 40px;
+    color: white;
 }
 
 main > #searching-interface > .search-input > #book-search-form {
@@ -87,6 +94,8 @@ main > #searching-interface > .search-input > #book-search-form > #search-button
     width: 300px;
     margin-top: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 5px 15px;
     overflow-y: scroll;
 }
 #print-result-section-context::-webkit-scrollbar {
@@ -167,7 +176,7 @@ footer > .footer-interface > .logo-name {
     bottom: 0;
     width: 20%;
     height: 20%;
-    background-color: black;
+    /* background-color: black; */
 }
 
 footer > .footer-interface > .logo-name > .logo {
@@ -189,7 +198,7 @@ footer > .footer-interface > .footer-content {
     right: 0;
     width: 80%;
     height: 20%;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 /**************/

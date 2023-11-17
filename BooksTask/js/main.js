@@ -83,6 +83,8 @@ function makeTitleForRequest(title) {
 }
 
 function printResponseInfo(data) {
+    printResultSectionContext.style.backgroundColor = "white"
+
     const numFoundElement = document.createElement('h3');
     numFoundElement.classList.add("num-found");
     numFoundElement.textContent = `Search results number: ${data.numFound}`;
