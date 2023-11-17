@@ -2,7 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: serif;
 }
+
+/**************/
+/*** Body ***/
 
 body {
     background-image: url('../img/backgroundImage.webp');
@@ -11,22 +15,18 @@ body {
 }
 
 /**************/
+
+
+/**************/
 /*** Header ***/
 
-header {
-    display: flex;
-    height: 150px;
+header > .logo-name {
+    width: 100%;
 }
 
-header > .logo {
-    width: 20%;
-    /* background-color: black; */
-    color: white;
-}
-
-header > .group-name {
-    width: 80%;
-    /* background-color: yellow; */
+header > .logo-name > img {
+    width: 30%;
+    padding: 10px 10px;
 }
 
 /**************/
@@ -37,21 +37,22 @@ header > .group-name {
 
 /*** Searching interface ***/
 
-main > #searching-interface {
-    margin-top: 60px;
+#searching-interface {
+    margin-top: 200px;
     text-align: center;
+    transition: 0.5s;
 }
 
-main > #searching-interface > .search-question-text {
+#search-question-text {
     font-size: 40px;
     color: white;
 }
 
-main > #searching-interface > .search-input > #book-search-form {
+#book-search-form {
     margin-top: 30px;
 }
 
-main > #searching-interface > .search-input > #book-search-form > #title-place {
+#title-place {
     width: 60%;
     max-width: 400px;
     padding: 10px 20px;
@@ -62,7 +63,7 @@ main > #searching-interface > .search-input > #book-search-form > #title-place {
     color: #333;
 }
 
-main > #searching-interface > .search-input > #book-search-form > #search-button {
+#search-button {
     padding: 10px 20px;
     background-color: #138065;
     color: white;
@@ -73,16 +74,19 @@ main > #searching-interface > .search-input > #book-search-form > #search-button
     margin-left: 10px;
     transition: 0.5s;
 }
-main > #searching-interface > .search-input > #book-search-form > #search-button:hover {
+#search-button:hover {
     opacity: 0.8;
     cursor: pointer;
 }
-main > #searching-interface > .search-input > #book-search-form > #search-button:active {
+#search-button:active {
     opacity: 1;
 }
 
 
 /*** Result section ***/
+#response-show {
+    transition: 0.5s;
+}
 
 #print-result-section {
     display: flex;
@@ -90,8 +94,8 @@ main > #searching-interface > .search-input > #book-search-form > #search-button
 }
 
 #print-result-section-context {
-    height: 200px;
-    width: 300px;
+    height: 280px;
+    width: 350px;
     margin-top: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -167,6 +171,7 @@ main > #searching-interface > .search-input > #book-search-form > #search-button
 /**************/
 /*** Footer ***/
 
+/*
 footer > .footer-interface {
     display: flex;
 }
@@ -176,7 +181,6 @@ footer > .footer-interface > .logo-name {
     bottom: 0;
     width: 20%;
     height: 20%;
-    /* background-color: black; */
 }
 
 footer > .footer-interface > .logo-name > .logo {
@@ -198,7 +202,7 @@ footer > .footer-interface > .footer-content {
     right: 0;
     width: 80%;
     height: 20%;
-    /* background-color: yellow; */
 }
+*/
 
 /**************/

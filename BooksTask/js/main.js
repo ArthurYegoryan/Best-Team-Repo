@@ -1,6 +1,7 @@
 const generalURL = "http://openlibrary.org/search.json?q=";
 const paginationURLPeace = "&page=";
 
+const searchingInterface = document.querySelector("#searching-interface");
 const searchFormElement = document.querySelector("#book-search-form");
 const titlePlace = document.querySelector("#title-place");
 const printResultSectionContext = document.querySelector("#print-result-section-context");
@@ -83,7 +84,8 @@ function makeTitleForRequest(title) {
 }
 
 function printResponseInfo(data) {
-    printResultSectionContext.style.backgroundColor = "white"
+    searchingInterface.style.marginTop = "80px";
+    printResultSectionContext.style.backgroundColor = "white";
 
     const numFoundElement = document.createElement('h3');
     numFoundElement.classList.add("num-found");
