@@ -77,16 +77,20 @@ main > #searching-interface > .search-input > #book-search-form > #search-button
 
 /*** Result section ***/
 
-#response-show {
+#print-result-section {
     display: flex;
     justify-content: center;
 }
 
-#print-result-section {
+#print-result-section-context {
     height: 200px;
-    width: 250px;
+    width: 300px;
     margin-top: 10px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+}
+#print-result-section-context::-webkit-scrollbar {
+    display: none;
 }
 
 
