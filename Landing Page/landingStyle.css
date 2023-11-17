@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -29,9 +30,15 @@
   height: 39vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   background: url no-repeat center;
   background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .hero-content {
@@ -63,7 +70,7 @@
 }
 
 .projects {
-  padding: 40px;
+  padding: 60px;
   background: #f0f0f0;
 }
 
@@ -79,11 +86,12 @@
 }
 
 .project-card {
+  color: #000000;
   display: flex;
   flex-direction: column;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 3px 10px 1px #5b575788;
+  border-radius: 0.7rem;
   transition: transform 0.3s ease-in-out;
 }
 
