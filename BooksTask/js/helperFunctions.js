@@ -33,7 +33,7 @@ function makeTitleForRequest(title) {
 }
 
 function printResponseInfo(data) {
-    searchingInterface.style.marginTop = "80px";
+    searchingInterface.style.marginTop = "60px";
     printResultSectionContextElem.style.backgroundColor = "white";
 
     const numFoundElement = document.createElement('h3');
