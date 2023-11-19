@@ -1,15 +1,15 @@
 const generalURL = "http://openlibrary.org/search.json?q=";
 const paginationURLPeace = "&page=";
 
-const searchingInterface = document.querySelector("#searching-interface");
-const searchFormElement = document.querySelector("#book-search-form");
-const titlePlace = document.querySelector("#title-place");
-const printResultSectionContext = document.querySelector("#print-result-section-context");
-const pageManagementSectionElement = document.querySelector("#page-management-section")
-const inputPageNumber = document.querySelector("#page-number");
-const goPageButton = document.querySelector("#go-page-button");
-const prevPageButton = document.querySelector("#prev-page-button");
-const nextPageButton = document.querySelector("#next-page-button");
+const searchingInterfaceElem = document.querySelector("#searching-interface");
+const bookSearchFormElem = document.querySelector("#book-search-form");
+const titlePlaceInputElem = document.querySelector("#title-place");
+const printResultSectionContextElem = document.querySelector("#print-result-section-context");
+const pageManagementDivElem = document.querySelector("#page-management-section")
+const pageNumberInputElem = document.querySelector("#page-number");
+const goPageButtonElem = document.querySelector("#go-page-button");
+const prevPageButtonElem = document.querySelector("#prev-page-button");
+const nextPageButtonElem = document.querySelector("#next-page-button");
 
 const pageInfos = {};
 
@@ -17,32 +17,32 @@ let inputTitle = "";
 let pageNumber = 1;
 let maxPageNumber;
 
-titlePlace.addEventListener("keyup", function() {
-    inputTitle = titlePlace.value;
+titlePlaceInputElem.addEventListener("keyup", function() {
+    inputTitle = titlePlaceInputElem.value;
 });
 
-searchFormElement.addEventListener("submit", (event) => {
+bookSearchFormElem.addEventListener("submit", (event) => {
     event.preventDefault();
     makeRequest();
 });
 
-inputPageNumber.addEventListener("change", function() {
-    pageNumber = inputPageNumber.value;
+pageNumberInputElem.addEventListener("change", function() {
+    pageNumber = pageNumberInputElem.value;
 });
 
-goPageButton.addEventListener("click", function(event) {
+goPageButtonElem.addEventListener("click", function(event) {
     event.preventDefault();
     makeRequest();
 });
 
-prevPageButton.addEventListener("click", function(event) {
+prevPageButtonElem.addEventListener("click", function(event) {
     event.preventDefault();
     if (pageNumber - 1 < 1) pageNumber = 1;
     else pageNumber--;
     makeRequest();
 })
 
-nextPageButton.addEventListener("click", function(event) {
+nextPageButtonElem.addEventListener("click", function(event) {
     event.preventDefault();
     if (pageNumber + 1 > maxPageNumber) pageNumber = maxPageNumber;
     else pageNumber++;
@@ -50,7 +50,7 @@ nextPageButton.addEventListener("click", function(event) {
 })
 
 async function makeRequest() {
-    printResultSectionContext.innerHTML = "";
+    printResultSectionContextElem.innerHTML = "";
 
     try {
         let data;
@@ -85,7 +85,7 @@ function makeTitleForRequest(title) {
 
 function printResponseInfo(data) {
     searchingInterface.style.marginTop = "80px";
-    printResultSectionContext.style.backgroundColor = "white";
+    printResultSectionContextElem.style.backgroundColor = "white";
 
     const numFoundElement = document.createElement('h3');
     numFoundElement.classList.add("num-found");
@@ -110,7 +110,7 @@ function printResponseInfo(data) {
     subjectsTitleElement.classList.add("result-subjects-title-info");
     subjectsTitleElement.textContent = "Subjects (first 5):";
 
-    printResultSectionContext.appendChild(numFoundElement);
+    printResultSectionContextElem.appendChild(numFoundElement);
     resultElement.appendChild(titleElement);
     resultElement.appendChild(authorNameElement);
     resultElement.appendChild(firstPublishYearElement);
@@ -137,15 +137,15 @@ function printResponseInfo(data) {
     }
 
     resultElement.appendChild(subjectsElement);
-    printResultSectionContext.appendChild(resultElement);
+    printResultSectionContextElem.appendChild(resultElement);
 
     maxPageNumber = Math.ceil(data.numFound / 100);
 
-    inputPageNumber.setAttribute("min", 1);
-    inputPageNumber.setAttribute("max", maxPageNumber);
+    pageNumberInputElem.setAttribute("min", 1);
+    pageNumberInputElem.setAttribute("max", maxPageNumber);
 
     // if (pageNumber === 1) prevPageButton.style.display = "none";
     // if (pageNumber === maxPageNumber) nextPageButton.style.display = "none";
 
-    pageManagementSectionElement.style.display = "block";
+    pageManagementDivElem.style.display = "block";
 }

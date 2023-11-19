@@ -7,48 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-name">
-            <img src="./img/logo-books.webp" alt="logo-name">
-        </div>
-    </header>
-    <main>
-        <section id="searching-interface">
-            <div id="search-question-text">
-                What kind of book do you want to search?
-            </div>
-            <div class="search-input">
-                <form action="" name="" id="book-search-form">
-                    <input type="text" placeholder="Please enter book title" name="title" id="title-place" required>
-                    <button id="search-button">Search</button>
-                </form>
-            </div>
-        </section>
-        <section id="response-show">
-            <div id="print-result-section">
-                <div id="print-result-section-context"></div>
-            </div>
-            <div id="page-management-section">
-                <form action="" name="" id="go-page-form">
-                    <input type="number" placeholder="1" id="page-number">
-                    <button id="go-page-button">GO!</button>
-                </form>
-                <button id="prev-page-button">Previous page</button>
-                <button id="next-page-button">Next page</button>
-            </div>
-        </section>
-    </main>
-    <!-- <footer>
-        <div class="footer-interface">
-            <div class="logo-name">
-                <div class="logo">Logo</div>
-                <div class="name">Name</div>
-            </div>
-            <div class="footer-content">
-            </div>
-        </div> 
-    </footer> -->
+    <div id="root"></div>
 
-    <script src="js/main.js"></script>
+    <script src="./js/structureBuildElements.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
