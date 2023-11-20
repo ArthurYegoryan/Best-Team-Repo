@@ -11,6 +11,7 @@ const goPageButtonElem = document.querySelector("#go-page-button");
 const prevPageButtonElem = document.querySelector("#prev-page-button");
 const nextPageButtonElem = document.querySelector("#next-page-button");
 
+const books = [];
 const pageInfos = {};
 
 let inputTitle = "";

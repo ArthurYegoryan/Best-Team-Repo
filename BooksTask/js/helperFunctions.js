@@ -1,20 +1,57 @@
 async function makeRequest() {
     printResultSectionContextElem.innerHTML = "";
+    pageManagementDivElem.style.display = "none";
 
     try {
         let data;
+        const concatedTitle = makeTitleForRequest(inputTitle);
+        const requestCall = await fetch(generalURL + concatedTitle + paginationURLPeace + pageNumber);
 
-        if (pageInfos[pageNumber]) {
-            data = pageInfos[pageNumber];
+        if (books.includes(concatedTitle)) {
+            if (pageInfos[pageNumber]) {
+                data = pageInfos[pageNumber];
+            } else {
+                const response = requestCall;
+                data = await response.json();
+    
+                pageInfos[pageNumber] = data;           
+            }
         } else {
-            const response = await fetch(generalURL + makeTitleForRequest(inputTitle) + paginationURLPeace + pageNumber);
+            const response = requestCall;
             data = await response.json();
-            pageInfos[pageNumber] = data;
-        }        
+
+            if (data.numFound) {
+                books.push(concatedTitle);
+                pageInfos[pageNumber] = data;
+            } else {
+                throw new Error("Sorry, the book was not found!");
+            }             
+        }
 
         printResponseInfo(data);        
     } catch (err) {
-        console.error(err.message);
+        printResultSectionContextElem.innerHTML = "";
+        printResultSectionContextElem.style.padding = "0";
+
+        const showErrorElem = document.createElement("div");
+        showErrorElem.classList.add("show-error");
+
+        const errorImgAreaElem = document.createElement("div");
+        errorImgAreaElem.classList.add("error-image-area");
+        const errorImgElem = document.createElement("img");
+        errorImgElem.setAttribute("src", "../img/error.webp");
+        errorImgElem.setAttribute("alt", "Error image");
+
+        const errorTextAreaElem = document.createElement("div");
+        errorTextAreaElem.classList.add("error-text-area");
+        const errorTextElem = document.createElement("h3");
+        errorTextElem.textContent = err.message;
+
+        errorImgAreaElem.appendChild(errorImgElem);
+        errorTextAreaElem.appendChild(errorTextElem);
+        showErrorElem.appendChild(errorImgAreaElem);
+        showErrorElem.appendChild(errorTextAreaElem);
+        printResultSectionContextElem.appendChild(showErrorElem);
     }    
 }
 
@@ -35,6 +72,7 @@ function makeTitleForRequest(title) {
 function printResponseInfo(data) {
     searchingInterface.style.marginTop = "60px";
     printResultSectionContextElem.style.backgroundColor = "white";
+    printResultSectionContextElem.style.padding = "10px 30px";
 
     const numFoundElement = document.createElement('h3');
     numFoundElement.classList.add("num-found");
