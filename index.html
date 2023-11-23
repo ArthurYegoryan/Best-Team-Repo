@@ -9,27 +9,23 @@
 </head>
 <body>
     <header>
-        <h1>Галерея  собак </h1>
-        <img src="https://clipart-library.com/2023/1332316-middle.png" alt="Логотип" >
-    </header>
-
-    <form id="myForm">
-        <label for="breeds">Породы собак:</label>
-        <select id="breeds" name="breeds" onchange="loadDogImages()">
-            <option value="akita">Akita</option>
-            <option value="beagle">Beagle</option>
-            <option value="dalmatian">Dalmatian</option>
-            <option value="germanshepherd">German Shepherd</option>
-            <option value="husky">Husky</option>
-            <option value="labrador">Labrador</option>
-            <option value="pug">Pug</option>
-            <option value="spaniel">Spaniel</option>
-            <option value="scottishdeerhound">Scottish Deerhound</option>
-
+        <div class="logo">
+          <img src="https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg" alt="Логотип">          
+          <h1>DOGSS</h1>
+        </div>
+      </header>
+    
+      <main>
+        <select id="breeds" onchange="getDogImage()">
+          
         </select>
-    </form>
+        <div class="gallery" id="dogGallery">
+    
+        </div>
+      </main>
 
-    <div id="image-container"></div>
+
+      <footer></footer>
 
     <script src="script.js"></script>
 </body>
