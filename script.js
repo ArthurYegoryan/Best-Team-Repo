@@ -13,7 +13,7 @@ async function getDogImage() {
     img.src = data.message;
     gallery.appendChild(img);
   } else {
-    gallery.innerHTML = "<p>Извините, фотография недоступна.</p>";
+    gallery.innerHTML = "<p>Sorry image is not available</p>";
   }
 }
 

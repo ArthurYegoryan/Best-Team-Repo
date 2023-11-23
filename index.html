@@ -1,32 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея с фотографиями собак</title>
-    <link rel="stylesheet"  type="text/css" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dogs Gallery</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">
-          <img src="https://bigpicture.ru/wp-content/uploads/2015/11/nophotoshop29-800x532.jpg" alt="Логотип">          
-          <h1>DOGSS</h1>
-        </div>
-      </header>
-    
-      <main>
-        <select id="breeds" onchange="getDogImage()">
-          
-        </select>
-        <div class="gallery" id="dogGallery">
-    
-        </div>
-      </main>
+      <div class="logo">
+        <img src="logo-dogs.webp" alt="logo" />
+      </div>
+    </header>
 
+    <main>
+      <select id="breeds" onchange="getDogImage()"></select>
+      <div class="gallery" id="dogGallery"></div>
+    </main>
 
-      <footer></footer>
+    <footer></footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
