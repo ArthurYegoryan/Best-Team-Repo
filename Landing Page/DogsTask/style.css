@@ -8,10 +8,13 @@
 
 header {
   height: 80px;
-  background-color: #3f862380;
+  background-color: #4c482580;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 10px 5px #00000088;
+  border-radius: 0.4rem;
+  backdrop-filter: blur(8px);
 }
 
 .logo {
@@ -28,6 +31,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("../images/dogs-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 select {
@@ -40,11 +48,10 @@ select {
 }
 
 .gallery {
-  width: 600px;
-  height: 600px;
+  width: 597px;
+  height: 616px;
   margin-top: 20px;
-  border: 2px solid #333;
-  border-radius: 10px;
+  border-radius: 298px;
   overflow: hidden;
 }
 
