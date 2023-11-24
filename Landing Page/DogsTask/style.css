@@ -48,11 +48,12 @@ select {
 }
 
 .gallery {
-  width: 597px;
-  height: 616px;
-  margin-top: 20px;
-  border-radius: 298px;
+  width: 670px;
+  height: 670px;
+  margin-top: 30px;
+  border-radius: 360px;
   overflow: hidden;
+  box-shadow: 0 1px 10px 5px #00000088;
 }
 
 .gallery img {
