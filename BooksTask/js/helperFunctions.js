@@ -18,40 +18,49 @@ async function makeRequest() {
             }
         } else {
             const response = requestCall;
-            data = await response.json();
 
-            if (data.numFound) {
-                books.push(concatedTitle);
-                pageInfos[pageNumber] = data;
-            } else {
-                throw new Error("Sorry, the book was not found!");
-            }             
+            if (response.status >= 200 && response.status <= 299) {
+                data = await response.json();
+
+                if (data.numFound) {
+                    books.push(concatedTitle);
+                    pageInfos[pageNumber] = data;
+                } else {
+                    throw new Error("Sorry, the book was not found!");
+                }
+            } else if (response.status === 404) {
+                throw new Error("404 error");
+            }
         }
 
         printResponseInfo(data);        
     } catch (err) {
-        printResultSectionContextElem.innerHTML = "";
-        printResultSectionContextElem.style.padding = "0";
+        if (err.message === "404 error") {
+            show404Error();
+        } else {
+            printResultSectionContextElem.innerHTML = "";
+            printResultSectionContextElem.style.padding = "0";
 
-        const showErrorElem = document.createElement("div");
-        showErrorElem.classList.add("show-error");
+            const showErrorElem = document.createElement("div");
+            showErrorElem.classList.add("show-error");
 
-        const errorImgAreaElem = document.createElement("div");
-        errorImgAreaElem.classList.add("error-image-area");
-        const errorImgElem = document.createElement("img");
-        errorImgElem.setAttribute("src", "./img/error.webp");
-        errorImgElem.setAttribute("alt", "Error image");
+            const errorImgAreaElem = document.createElement("div");
+            errorImgAreaElem.classList.add("error-image-area");
+            const errorImgElem = document.createElement("img");
+            errorImgElem.setAttribute("src", "./img/error.webp");
+            errorImgElem.setAttribute("alt", "Error image");
 
-        const errorTextAreaElem = document.createElement("div");
-        errorTextAreaElem.classList.add("error-text-area");
-        const errorTextElem = document.createElement("h3");
-        errorTextElem.textContent = err.message;
+            const errorTextAreaElem = document.createElement("div");
+            errorTextAreaElem.classList.add("error-text-area");
+            const errorTextElem = document.createElement("h3");
+            errorTextElem.textContent = err.message;
 
-        errorImgAreaElem.appendChild(errorImgElem);
-        errorTextAreaElem.appendChild(errorTextElem);
-        showErrorElem.appendChild(errorImgAreaElem);
-        showErrorElem.appendChild(errorTextAreaElem);
-        printResultSectionContextElem.appendChild(showErrorElem);
+            errorImgAreaElem.appendChild(errorImgElem);
+            errorTextAreaElem.appendChild(errorTextElem);
+            showErrorElem.appendChild(errorImgAreaElem);
+            showErrorElem.appendChild(errorTextAreaElem);
+            printResultSectionContextElem.appendChild(showErrorElem);
+        }        
     }    
 }
 
@@ -132,4 +141,20 @@ function printResponseInfo(data) {
     pageNumberInputElem.setAttribute("max", maxPageNumber);
 
     pageManagementDivElem.style.display = "block";
+}
+
+function show404Error() {
+    printResultSectionContextElem.innerHTML = "";
+    printResultSectionContextElem.style.padding = "0";
+    searchingInterface.style.marginTop = "60px";
+
+    const showErrorElem = document.createElement("div");
+    showErrorElem.classList.add("show-404-error");
+
+    const errorImgElem = document.createElement("img");
+    errorImgElem.setAttribute("src", "./img/error404.webp");
+    errorImgElem.setAttribute("alt", "404 Error image");
+
+    showErrorElem.appendChild(errorImgElem);
+    printResultSectionContextElem.appendChild(showErrorElem);
 }
