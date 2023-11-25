@@ -1,4 +1,4 @@
-const generalURL = "http://openlibrary.org/search123.json?q=";
+const generalURL = "http://openlibrary.org/search.json?q=";
 const paginationURLPeace = "&page=";
 
 const searchingInterfaceElem = document.querySelector("#searching-interface");
