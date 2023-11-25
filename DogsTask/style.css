@@ -1,0 +1,69 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 80px;
+  background-color: #4c482580;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 10px 5px #00000088;
+  border-radius: 0.4rem;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  width: 200px;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../images/dogs-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+select {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.gallery {
+  width: 670px;
+  height: 670px;
+  margin-top: 30px;
+  border-radius: 360px;
+  overflow: hidden;
+  box-shadow: 0 1px 10px 5px #00000088;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery p {
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
