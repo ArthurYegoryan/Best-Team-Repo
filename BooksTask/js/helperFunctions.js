@@ -39,7 +39,7 @@ async function makeRequest() {
         const errorImgAreaElem = document.createElement("div");
         errorImgAreaElem.classList.add("error-image-area");
         const errorImgElem = document.createElement("img");
-        errorImgElem.setAttribute("src", "../img/error.webp");
+        errorImgElem.setAttribute("src", "./img/error.webp");
         errorImgElem.setAttribute("alt", "Error image");
 
         const errorTextAreaElem = document.createElement("div");

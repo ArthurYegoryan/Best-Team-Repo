@@ -126,7 +126,7 @@ img {
 }
 
 .error-image-area > img {
-  height: 60px;
+  width: 60px;
 }
 
 .error-text-area > h3 {
